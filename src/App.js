@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { testActions } from "./store/test_reducer";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -12,6 +14,12 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" />
+        </Routes>
+      </Router>
       <header className="App-header">
         <p></p>
         Final Capstone Set up!
