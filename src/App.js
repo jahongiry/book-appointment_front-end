@@ -3,6 +3,7 @@ import { testActions } from "./store/test_reducer";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,15 +18,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" />
+          <Route path="/" exact element={<MainPage />} />
         </Routes>
       </Router>
-      <header className="App-header">
-        <p></p>
-        Final Capstone Set up!
-        <button onClick={textChange}>Change text</button>
-        <p className="text">This is test number {testText}</p>
-      </header>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../img/logo3.png";
 
 function Navbar() {
   return (
@@ -8,28 +9,28 @@ function Navbar() {
       <nav className="nav-menu active">
         <ul className="nav-menu-items">
           <li className="navbar-toggle logo">
-            <Link to="#" className="menu-bars">
-              Logo
+            <Link to="/" className="menu-bars">
+              <img className="logo" src={logo} alt="Lambo logo"></img>
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="#" className="menu-bars">
-              Reserve car
+            <Link to="/" className="menu-bars">
+              Car Form
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="#" className="menu-bars">
-              My Reserve
+            <Link to="/" className="menu-bars">
+              Reserve
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="#" className="menu-bars">
+            <Link to="/" className="menu-bars">
               Add a car
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="#" className="menu-bars">
-              Delete car
+            <Link to="/" className="menu-bars">
+              Remove
             </Link>
           </li>
           <li className="icons">
