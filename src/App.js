@@ -1,6 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { testActions } from './store/test_reducer';
-import './App.css';
+import { useDispatch, useSelector } from "react-redux";
+import { testActions } from "./store/test_reducer";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -12,15 +16,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p />
-        Final Capstone Set up!
-        <button type="button" onClick={textChange}>Change text</button>
-        <p className="text">
-          This is test number
-          {testText}
-        </p>
-      </header>
+
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<MainPage />} />
+        </Routes>
+      </Router>
+
     </div>
   );
 }
