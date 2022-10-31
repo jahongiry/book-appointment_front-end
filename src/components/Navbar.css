@@ -61,10 +61,9 @@
 
 .nav-menu-items {
   width: 100%;
-
   margin: 0;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr 1fr 4fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 8fr;
 }
 
 .navbar-toggle {
@@ -92,7 +91,7 @@ span {
 }
 
 .logo {
-  width: 100%;
+  width: 90%;
   background-color: white;
   border-radius: 50%;
   margin-top: 1rem;
