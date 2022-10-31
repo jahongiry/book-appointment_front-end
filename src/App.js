@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./components/MainPage";
 
+
 function App() {
   const dispatch = useDispatch();
   const testText = useSelector((state) => state.test.number);
@@ -15,12 +16,14 @@ function App() {
 
   return (
     <div className="App">
+
       <Router>
         <Navbar />
         <Routes>
           <Route path="/" exact element={<MainPage />} />
         </Routes>
       </Router>
+
     </div>
   );
 }
