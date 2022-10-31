@@ -71,7 +71,7 @@ function MainPage() {
         </div>
         <div className="right">
           <button className="next-button">
-            <FontAwesomeIcon icon="fa-solid fa-caret-left" />
+            <FontAwesomeIcon icon="fa-solid fa-caret-right" />
           </button>
         </div>
       </div>
