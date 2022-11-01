@@ -1,6 +1,6 @@
-import car from "../img/lambo.webp";
-import "./MainPage.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import car from '../img/lambo.webp';
+import './MainPage.css';
 
 function MainPage() {
   return (
@@ -16,7 +16,7 @@ function MainPage() {
         </div>
         <div className="first">
           <div className="card1">
-            <img className="lambo" src={car} alt="lambo car"></img>
+            <img className="lambo" src={car} alt="lambo car" />
           </div>
 
           <h3 className="model-name">LAMBO S500</h3>
@@ -35,7 +35,7 @@ function MainPage() {
         </div>
         <div className="first">
           <div className="card1">
-            <img className="lambo" src={car} alt="lambo car"></img>
+            <img className="lambo" src={car} alt="lambo car" />
           </div>
           <h3 className="model-name">LAMBO S500</h3>
           <hr className="small-line" />
@@ -53,7 +53,7 @@ function MainPage() {
         </div>
         <div className="first">
           <div className="card1">
-            <img className="lambo" src={car} alt="lambo car"></img>
+            <img className="lambo" src={car} alt="lambo car" />
           </div>
           <h3 className="model-name">LAMBO S500</h3>
           <hr className="small-line" />

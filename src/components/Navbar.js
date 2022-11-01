@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../img/logo3.png";
+import { Link } from 'react-router-dom';
+import './Navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../img/logo3.png';
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
         <ul className="nav-menu-items">
           <li className="navbar-toggle logo">
             <Link to="/" className="menu-bars">
-              <img className="logo" src={logo} alt="Lambo logo"></img>
+              <img className="logo" src={logo} alt="Lambo logo" />
             </Link>
           </li>
           <li className="navbar-toggle reserve">
@@ -19,13 +19,13 @@ function Navbar() {
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
-              Reserve
+            <Link to="/reservatons" className="menu-bars">
+              Reservations
             </Link>
           </li>
           <li className="navbar-toggle reserve">
             <Link to="/" className="menu-bars">
-              Add a car
+              Reserve car
             </Link>
           </li>
           <li className="navbar-toggle reserve">
