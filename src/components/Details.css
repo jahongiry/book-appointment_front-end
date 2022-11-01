@@ -1,4 +1,4 @@
-.login-container {
+/* .login-container {
   background-color: #ffb400;
   height: 100vh;
   background-image: url("../img/lambo.webp");
@@ -10,4 +10,65 @@
   justify-items: center;
   justify-content: center;
   flex-direction: column;
+} */
+
+.details-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  height: 100vh;
+  margin-right: 3rem;
+}
+
+.details-img {
+  width: 100%;
+}
+
+.reserve-button {
+  background-color: rgb(151, 191, 15);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  transition: all 2s;
+}
+
+.reserve-button:hover {
+  background-color: rgb(119, 146, 30);
+  color: aliceblue;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  height: 2.5rem;
+}
+
+.back-button {
+  color: white;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  border: none;
+  border-top-right-radius: 42%;
+  border-bottom-right-radius: 42%;
+}
+
+.left :hover {
+  background-color: rgb(151, 191, 15);
+}
+
+.description-details {
+  background-color: #e2e3e5;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+.more-model {
+  text-decoration: none;
+}
+
+.more-model:active {
+  color: rgb(151, 191, 15);
 }

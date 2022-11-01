@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./components/MainPage";
 import LogIn from "./components/LogIn";
+import Details from "./components/Details";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<LogIn />} />
           <Route path="/mainpage" exact element={<MainPage />} />
+          <Route path="/details" exact element={<Details />} />
         </Routes>
       </Router>
     </div>
