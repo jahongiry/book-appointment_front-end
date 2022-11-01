@@ -5,71 +5,70 @@ import './Reservations.css'
 
 
 const reservations = [{
-    name: 'Lexus',
+    id: 1,
+    model: 'Lexus',
     brand: 'Lexus',
-    color: 'black',
+    city: 'Sofia',
     date: '2022-10-24'
   },
   {
-    name: 'Hyunda',
+    id: 2,
+    model: 'Hyunda',
     brand: 'Hyundai alvero',
+    city: 'Plovdiv',
+    date: '2022-10-24'
+  },
+  {
+    id: 3,
+    model: 'Lambo',
+    brand: 'Lamborghini',
     city: 'Las vegas',
     date: '2022-10-24'
   },
   {
-
-    name: '',
-    brand: 'toyo',
-    city: 'nevada',
+    id: 4, 
+    model: 'Bugatti',
+    brand: 'Bugatti',
+    city: 'Las vegas',
     date: '2022-10-24'
   },
   {
-    model: 'toyo',
-    city: 'nevada',
-    date: '2022-10-24'
-  },
-  {
-    model: 'toyo',
-    city: 'nevada',
+    id: 5,
+    model: 'Ferrari',
+    brand: 'Ferrari',
+    city: 'Las vegas',
     date: '2022-10-24'
   }]
 
 
 const Reservations = () => {
+
+
     return (
         <div className="main">
-        {/* <div className='res-contain'>
+           <h1>Reservations</h1>
+           
+        <div className='res-contain'>
         <table className="table">
       <thead className="thead-dark">
-        <tr><th>Car model</th>
-        <th>date</th>
-        <th>city</th></tr>
+        <tr><th scope="col">Car model</th>
+        <th scope="col">City</th>
+        <th scope="col">Date</th>
+        <th scope="col">action</th>
+        </tr>
       </thead>
         
       <tbody>
 
         {reservations.map((reservation, index) => {
-          return <Reservation key={index} {...reservation} />
+          return <Reservation key={index} {...reservation}  />
+          
         })}
        </tbody>
        </table>
-    </div> */}
-    <h1>Hello </h1>
-    {/* <table >
-      <thead >
-        <tr><th>Car model</th>
-        <th>date</th>
-        <th>city</th>
-        </tr>
-      </thead>
-      </table> */}
-      <table className="table">
-      <thead className="thead-dark">
-        <tr><th>Car model</th>
-        <th>date</th>
-        <th>city</th></tr>
-      </thead>
-      </table>
+    </div> 
+   
+   
         </div>
     )
 }
