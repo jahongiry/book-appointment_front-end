@@ -113,3 +113,11 @@
 .right :hover {
   background-color: rgb(151, 191, 15);
 }
+
+.discover-text {
+  font-size: 0.8rem;
+}
+
+.discover {
+  font-size: 0.6rem;
+}
