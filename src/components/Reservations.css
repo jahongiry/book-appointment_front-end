@@ -19,30 +19,31 @@
 }
 
 form {
-    width: 50%;
-    margin: 150px auto;
-    /* background-color: green; */
-  }
-  
-  form > div {
-    width: 100%;
-    padding: 2%;
-  }
-  
-  .model-selector {
-    width: 100%;
-  }
-  
-  form input,
-  form select {
-    width: 100%;
-    padding: 8px 4px;
-  }
+  width: 50%;
+  margin: 150px auto;
 
-  form label {
-    display: table-header-group;
-  }
+  /* background-color: green; */
+}
 
-  .form-wrapper{
-    background-color: lightgreen;
-  }
+form > div {
+  width: 100%;
+  padding: 2%;
+}
+
+.model-selector {
+  width: 100%;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px 4px;
+}
+
+form label {
+  display: table-header-group;
+}
+
+.form-wrapper {
+  background-color: lightgreen;
+}

@@ -24,8 +24,8 @@ function Navbar() {
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
-              Add a car
+            <Link to="/reserve_form" className="menu-bars">
+              Reserve Now
             </Link>
           </li>
           <li className="navbar-toggle reserve">
