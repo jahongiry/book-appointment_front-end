@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Reservation = (props) => {
-    const {model , city, date } = props
+    const {model , city, date  } = props
+
   return (
     
    
@@ -9,6 +10,7 @@ const Reservation = (props) => {
     <td>{model}</td>
     <td>{city}</td>
     <td>{date}</td>
+    <td><button type='submit' className="btn btn-success">Cancel Reservation</button></td>
     </tr>
    
   )
