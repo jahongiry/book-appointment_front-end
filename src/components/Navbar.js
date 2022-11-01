@@ -9,27 +9,27 @@ function Navbar() {
       <nav className="nav-menu active">
         <ul className="nav-menu-items">
           <li className="navbar-toggle logo">
-            <Link to="/" className="menu-bars">
+            <Link to="/mainpage" className="menu-bars">
               <img className="logo" src={logo} alt="Lambo logo"></img>
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
+            <Link to="/carform" className="menu-bars">
               Car Form
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
+            <Link to="/reserve" className="menu-bars">
               Reserve
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
+            <Link to="/addcar" className="menu-bars">
               Add a car
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
+            <Link to="/removecar" className="menu-bars">
               Remove
             </Link>
           </li>
