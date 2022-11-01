@@ -1,4 +1,5 @@
-import React from 'react'
+import React  from 'react'
+
 
 const Reservation = (props) => {
     const {model , city, date  } = props
@@ -15,5 +16,8 @@ const Reservation = (props) => {
    
   )
 }
+
+
+
 
 export default Reservation
