@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 
 import MainPage from './components/MainPage';
+import LogIn from "./components/LogIn";
 import Reservations from './components/Reservations';
 
 function App() {
@@ -12,15 +13,14 @@ function App() {
 
   return (
     <div className="App">
-
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact element={<MainPage />} />
           <Route path="/reservatons" exact element={<Reservations />} />
+          <Route path="/" exact element={<LogIn />} />
+          <Route path="/mainpage" exact element={<MainPage />} />
         </Routes>
       </Router>
-
     </div>
   );
 }

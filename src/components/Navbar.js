@@ -9,12 +9,12 @@ function Navbar() {
       <nav className="nav-menu active">
         <ul className="nav-menu-items">
           <li className="navbar-toggle logo">
-            <Link to="/" className="menu-bars">
-              <img className="logo" src={logo} alt="Lambo logo" />
+            <Link to="/mainpage" className="menu-bars">
+              <img className="logo" src={logo} alt="Lambo logo"></img>
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
+            <Link to="/carform" className="menu-bars">
               Car Form
             </Link>
           </li>
@@ -25,11 +25,11 @@ function Navbar() {
           </li>
           <li className="navbar-toggle reserve">
             <Link to="/" className="menu-bars">
-              Reserve car
+              Add a car
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/" className="menu-bars">
+            <Link to="/removecar" className="menu-bars">
               Remove
             </Link>
           </li>

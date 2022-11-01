@@ -1,0 +1,50 @@
+.login-container {
+  background-color: #ffb400;
+  height: 100vh;
+  background-image: url("../img/lambo.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70rem 50rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-heading {
+  margin-top: -30rem;
+  color: white;
+  font-family: fantasy;
+  font-size: 3rem;
+}
+
+/* .email-login {
+  background-color: rgb(151, 191, 15);
+} */
+
+.input-email[type="text"] {
+  width: 100%;
+  background-color: rgb(151, 191, 15);
+  color: white;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: none;
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0 1px 2px,
+    rgba(0, 0, 0, 0.07) 0 2px 4px,
+    rgba(0, 0, 0, 0.07) 0 4px 8px,
+    rgba(0, 0, 0, 0.07) 0 8px 16px,
+    rgba(0, 0, 0, 0.07) 0 16px 32px,
+    rgba(0, 0, 0, 0.07) 0 32px 64px;
+}
+
+.input-email::placeholder {
+  color: white;
+}
+
+.input-email[type="text"]:focus {
+  background-color: rgb(151, 191, 15);
+  outline: none;
+}
