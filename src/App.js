@@ -6,8 +6,11 @@ import Navbar from './components/Navbar';
 
 import MainPage from './components/MainPage';
 import LogIn from "./components/LogIn";
+
+import Details from "./components/Details";
 import Reservations from './components/Reservations';
 import ReserveForm from './components/ReserveForm';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +23,11 @@ function App() {
           <Route path="/reservatons" exact element={<Reservations />} />
           <Route path="/" exact element={<LogIn />} />
           <Route path="/mainpage" exact element={<MainPage />} />
+
           <Route path="/reserve_form" exact element={<ReserveForm />} />
+
+          <Route path="/details" exact element={<Details />} />
+
         </Routes>
       </Router>
     </div>
