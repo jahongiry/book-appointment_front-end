@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Navbar.css'
+import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../img/logo3.png';
 

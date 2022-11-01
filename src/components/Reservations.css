@@ -1,6 +1,19 @@
 .table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-    background-color: transparent;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.thead-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+.res-contain {
+  width: 100%;
+  max-width: 70%;
+  margin: 4% auto;
+  justify-content: space-between;
 }

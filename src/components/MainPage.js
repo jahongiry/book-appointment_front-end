@@ -10,7 +10,7 @@ function MainPage() {
       <hr className="main-line" />
       <div className="middle">
         <div className="left">
-          <button className="back-button">
+          <button type="button" className="back-button">
             <FontAwesomeIcon icon="fa-solid fa-caret-left" />
           </button>
         </div>
@@ -70,7 +70,7 @@ function MainPage() {
           </div>
         </div>
         <div className="right">
-          <button className="next-button">
+          <button type="button" className="next-button">
             <FontAwesomeIcon icon="fa-solid fa-caret-right" />
           </button>
         </div>

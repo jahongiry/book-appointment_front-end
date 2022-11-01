@@ -9,11 +9,6 @@ import Reservations from './components/Reservations';
 
 function App() {
   const dispatch = useDispatch();
-  const testText = useSelector((state) => state.test.number);
-
-  const textChange = () => {
-    dispatch(testActions.testing());
-  };
 
   return (
     <div className="App">
