@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../img/logo3.png";
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../img/logo3.png';
 
 function Navbar() {
   return (
@@ -19,12 +19,12 @@ function Navbar() {
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/reserve" className="menu-bars">
-              Reserve
+            <Link to="/reservatons" className="menu-bars">
+              Reservations
             </Link>
           </li>
           <li className="navbar-toggle reserve">
-            <Link to="/addcar" className="menu-bars">
+            <Link to="/" className="menu-bars">
               Add a car
             </Link>
           </li>
