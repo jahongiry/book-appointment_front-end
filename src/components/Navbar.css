@@ -64,6 +64,7 @@
   width: 100%;
   margin: 0;
   display: grid;
+  padding-left: 10px;
   grid-template-rows: 2fr 1fr 1fr 1fr 8fr;
 }
 
