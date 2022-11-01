@@ -1,48 +1,12 @@
 import React from "react";
 import Reservation from "./Reservation";
+import { reservations } from "./ReserveForm";
 import './Reservations.css'
 
 
 
-const reservations = [{
-    id: 1,
-    model: 'Lexus',
-    brand: 'Lexus',
-    city: 'Sofia',
-    date: '2022-10-24'
-  },
-  {
-    id: 2,
-    model: 'Hyunda',
-    brand: 'Hyundai alvero',
-    city: 'Plovdiv',
-    date: '2022-10-24'
-  },
-  {
-    id: 3,
-    model: 'Lambo',
-    brand: 'Lamborghini',
-    city: 'Las vegas',
-    date: '2022-10-24'
-  },
-  {
-    id: 4, 
-    model: 'Bugatti',
-    brand: 'Bugatti',
-    city: 'Las vegas',
-    date: '2022-10-24'
-  },
-  {
-    id: 5,
-    model: 'Ferrari',
-    brand: 'Ferrari',
-    city: 'Las vegas',
-    date: '2022-10-24'
-  }]
-
-
 const Reservations = () => {
-
+  console.log(reservations);
 
     return (
         <div className="main">
