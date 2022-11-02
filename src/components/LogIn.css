@@ -19,9 +19,11 @@
   font-size: 3rem;
 }
 
-/* .email-login {
-  background-color: rgb(151, 191, 15);
-} */
+.login-info {
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  gap: 2rem;
+}
 
 .input-email[type="text"] {
   width: 100%;
@@ -31,13 +33,9 @@
   box-sizing: border-box;
   border-radius: 15px;
   border: none;
-  box-shadow:
-    rgba(0, 0, 0, 0.07) 0 1px 2px,
-    rgba(0, 0, 0, 0.07) 0 2px 4px,
-    rgba(0, 0, 0, 0.07) 0 4px 8px,
-    rgba(0, 0, 0, 0.07) 0 8px 16px,
-    rgba(0, 0, 0, 0.07) 0 16px 32px,
-    rgba(0, 0, 0, 0.07) 0 32px 64px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px, rgba(0, 0, 0, 0.07) 0 2px 4px,
+    rgba(0, 0, 0, 0.07) 0 4px 8px, rgba(0, 0, 0, 0.07) 0 8px 16px,
+    rgba(0, 0, 0, 0.07) 0 16px 32px, rgba(0, 0, 0, 0.07) 0 32px 64px;
 }
 
 .input-email::placeholder {

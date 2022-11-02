@@ -1,0 +1,36 @@
+.add-car-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.linkcars {
+  margin-left: 5rem;
+  grid-column: 1/ 4;
+  margin-right: 5rem;
+}
+
+.heading-for-add {
+  margin-top: 10rem;
+  font-weight: 700;
+  font-family: fantasy;
+  font-size: 4rem;
+  color: rgb(0, 117, 0);
+}
+
+.addcar-container::after {
+  content: "";
+  opacity: 0.25;
+  background: url("../img/car-bg.jpg") fixed top;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
