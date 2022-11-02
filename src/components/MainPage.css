@@ -19,7 +19,7 @@
   display: grid;
   align-content: space-between;
   justify-content: space-between;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 3rem;
 }
 
@@ -52,7 +52,9 @@
 
 .model-name {
   margin-top: 1.2rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  color: rgb(20, 20, 20);
+  font-weight: 700;
 }
 
 .lambo-info {
@@ -120,4 +122,13 @@
 
 .discover {
   font-size: 0.6rem;
+}
+
+.car-ul {
+  display: flex;
+  gap: 15rem;
+}
+
+.to-deatils-link {
+  text-decoration: none;
 }

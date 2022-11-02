@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import testingReducer from './test_reducer';
+import { configureStore } from "@reduxjs/toolkit";
+import mainpageSlice from "./mainpage_reducer";
 
 const store = configureStore({
-  reducer: { test: testingReducer },
+  reducer: { mainPage: mainpageSlice.reducer },
 });
 
 export default store;
