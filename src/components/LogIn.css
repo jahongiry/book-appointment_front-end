@@ -23,6 +23,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   display: grid;
   gap: 2rem;
+  margin-top: 3rem;
 }
 
 .input-email[type="text"] {

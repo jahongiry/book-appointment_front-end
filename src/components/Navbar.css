@@ -25,8 +25,7 @@
   float: left;
   left: -100%;
   transition: 850ms;
-  box-shadow:
-    rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
     rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
 }
 
@@ -65,7 +64,7 @@
   margin: 0;
   display: grid;
   padding-left: 10px;
-  grid-template-rows: 2fr 1fr 1fr 1fr 8fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 8fr;
 }
 
 .navbar-toggle {

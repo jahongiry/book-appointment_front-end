@@ -33,6 +33,11 @@ function Navbar() {
               Add Cars
             </Link>
           </li>
+          <li className="navbar-toggle reserve">
+            <Link to="/" className="menu-bars">
+              Log out
+            </Link>
+          </li>
           <li className="icons">
             <FontAwesomeIcon icon="fa-brands fa-twitter" />
             <FontAwesomeIcon icon="fa-brands fa-facebook" />
