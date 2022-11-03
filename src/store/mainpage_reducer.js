@@ -1,29 +1,75 @@
-import { createSlice } from "@reduxjs/toolkit";
+// import { createSlice } from "@reduxjs/toolkit";
+import axios from 'axios'
 
-const initialTestState = {
-  id: 0,
-  carImage:
-    "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/families-gallery/2022/04_12/family_chooser_tecnica_m.png",
-  name: "test",
-  alt: "testalt",
-  description: "testdescription",
-  price: "1200",
+const BASE_URL = "http://127.0.0.1:3000/api/v1"
+
+// action creators  
+
+const ALL_CARS = 'ALL_CARS';
+const SINGLE_CAR = 'SINGLE_CAR';
+
+// Initial state
+
+const initialState = {
+ cars: [],
+ car: {}
 };
-/* eslint-disable no-param-reassign */
-const mainpageSlice = createSlice({
-  name: "mainpage",
-  initialState: initialTestState,
-  reducers: {
-    moveToDetailsPage(state, action) {
-      state.id = action.payload.id;
-      state.carImage = action.payload.carImage;
-      state.name = action.payload.name;
-      state.description = action.payload.description;
-      state.price = action.payload.price;
-    },
-  },
+
+// actions     
+
+export const fetchCars = async () => {
+    const response = await axios.get(`${BASE_URL}/all_cars`);
+    // console.log(response)
+    return response.data;
+};
+
+export const fetchCarDetails = async (id) => {
+  const response = await axios.get(`${BASE_URL}/show_car/${id}`);
+  // console.log(response);
+  return response.data;
+}
+
+// get data from API
+
+export const fetchSingleCar = (id) => {
+  return async (dispatch) => {
+    const response = await fetchCarDetails(id);
+    dispatch({
+      type: SINGLE_CAR,
+      payload: response
+    })
+  }
+}
+
+
+export const fetchAllCars = () => (async (dispatch) => {
+  const cars = await fetchCars();
+  dispatch({
+    type: ALL_CARS,
+    payload: cars,
+  });
 });
 
-export const mainpageActions = mainpageSlice.actions;
+// Reducer
 
-export default mainpageSlice;
+const carsReducer = (state = initialState , action) => {
+      switch (action.type) {
+        case ALL_CARS:
+          return {
+            ...state, 
+             cars: action.payload
+          }
+  
+        case SINGLE_CAR:
+          return {
+            ...state.car,
+            car: action.payload
+          }
+
+          default: 
+          return state
+      }
+}
+
+
+export default carsReducer
