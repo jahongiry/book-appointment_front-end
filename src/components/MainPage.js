@@ -8,6 +8,7 @@ import { useState } from "react";
 
 function MainPage() {
   const [initial, setInitial] = useState(0);
+  const [right, setRight] = useState(true);
   const dispatch = useDispatch();
 
   const cars = [
@@ -65,7 +66,14 @@ function MainPage() {
     return arr.slice(initial, initial + 3);
   };
   const nextCars = carsTest(cars);
-
+  const chooseName = () => {
+    if (right === true) {
+      return "first";
+    } else {
+      return "second";
+    }
+  };
+  const classNaming = chooseName();
   return (
     <div className="main">
       <h1>LATEST MODELS</h1>
@@ -75,6 +83,7 @@ function MainPage() {
         <div className="left">
           <button
             onClick={() => {
+              setRight(false);
               if (initial !== 0) {
                 setInitial(initial - 3);
               }
@@ -87,7 +96,7 @@ function MainPage() {
         </div>
         <ul className="car-ul">
           {nextCars.map((car) => (
-            <div className="first" key={car.id}>
+            <div className={classNaming} key={car.id}>
               <Link
                 to="/details"
                 className="to-deatils-link"
@@ -133,6 +142,7 @@ function MainPage() {
         <div className="right">
           <button
             onClick={() => {
+              setRight(true);
               setInitial(initial + 3);
             }}
             type="button"

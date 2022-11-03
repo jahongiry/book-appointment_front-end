@@ -12,6 +12,13 @@
   width: 175%;
   margin-left: -4.5rem;
   margin-top: -1rem;
+  transition: all 0.5s;
+}
+
+.card1 img:hover {
+  width: 200%;
+  margin-left: -5.5rem;
+  margin-top: -2rem;
 }
 
 .middle {
@@ -131,4 +138,36 @@
 
 .to-deatils-link {
   text-decoration: none;
+}
+
+.second {
+  animation-name: example2;
+  animation-duration: 1s;
+}
+
+@keyframes example2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.first {
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+    transform: translateX(300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
