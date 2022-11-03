@@ -14,7 +14,7 @@ import AddCars from "./components/AddCars";
 import Remove from "./components/RemoveCars";
 
 function App() {
-  const dispatch = useDispatch();
+
 
   return (
     <div className="App">
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" exact element={<LogIn />} />
           <Route path="/mainpage" exact element={<MainPage />} />
           <Route path="/reserve_form" exact element={<ReserveForm />} />
-          <Route path="/details" exact element={<Details />} />
+          <Route path="/details/:id" exact element={<Details />} />
           <Route path="/addcars" exact element={<AddCars />} />
           <Route path="/removecar" exact element={<Remove />} />
         </Routes>
