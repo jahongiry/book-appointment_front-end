@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import "./LogIn.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function LogIn() {
@@ -30,6 +32,9 @@ function LogIn() {
             placeholder="Enter last name..."
           />
         </label>
+        <Link to="/mainpage">
+        <button className="btn btn-success">Login</button>
+        </Link>
       </form>
     </div>
   );
