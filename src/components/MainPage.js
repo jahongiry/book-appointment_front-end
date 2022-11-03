@@ -2,70 +2,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import car from "../img/lambo.webp";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { mainpageActions } from "../store/mainpage_reducer";
-import { useState } from "react";
+import { useDispatch , useSelector } from "react-redux";
+// import { mainpageActions } from "../store/mainpage_reducer";
+import { useEffect, useState } from "react";
+import { fetchAllCars } from '../store/mainpage_reducer'
+import { fetchSingleCar }  from "../store/mainpage_reducer";
 
 function MainPage() {
-  const [initial, setInitial] = useState(0);
+  const [initial, setInitial] = useState(0 || []);
   const [right, setRight] = useState(true);
   const dispatch = useDispatch();
+  const cars = useSelector(state => state.cars.cars)
+  useEffect(() => {
+    dispatch(fetchAllCars())
+  } , [dispatch])
 
-  const cars = [
-    {
-      id: 1,
-      carImage: car,
-      name: "Lambo car1",
-      alt: "Lambo car",
-      price: 3000,
-      description: "Lamborghini 350 GT at the Turin Motor Show!",
-    },
-    {
-      id: 2,
-      carImage: car,
-      name: "Lambo car2",
-      description: "Lamborghini 350 GT at the Turin Motor Show!",
-      price: 5000,
-      alt: "Lambo car",
-    },
-    {
-      id: 3,
-      carImage: car,
-      name: "Lambo car3",
-      description: "Lamborghini 350 GT at the Turin Motor Show!",
-      price: 8000,
-      alt: "Lambo car",
-    },
-    {
-      id: 4,
-      carImage: car,
-      name: "Lambo car4",
-      alt: "Lambo car",
-      price: 3000,
-      description: "Lamborghini 350 GT at the Turin Motor Show!",
-    },
-    {
-      id: 5,
-      carImage: car,
-      name: "Lambo car5",
-      description: "Lamborghini 350 GT at the Turin Motor Show!",
-      price: 5000,
-      alt: "Lambo car",
-    },
-    {
-      id: 6,
-      carImage: car,
-      name: "Lambo car6",
-      description: "Lamborghini 350 GT at the Turin Motor Show!",
-      price: 8000,
-      alt: "Lambo car",
-    },
-  ];
+
 
   const carsTest = (arr) => {
     return arr.slice(initial, initial + 3);
   };
-  const nextCars = carsTest(cars);
+  const nextCars = carsTest(cars || []);
   const chooseName = () => {
     if (right === true) {
       return "first";
@@ -98,28 +55,21 @@ function MainPage() {
           {nextCars.map((car) => (
             <div className={classNaming} key={car.id}>
               <Link
-                to="/details"
+                to={`/details/${car.id}`}
                 className="to-deatils-link"
                 onClick={() => {
                   dispatch(
-                    mainpageActions.moveToDetailsPage({
-                      id: car.id,
-                      carImage: car.carImage,
-                      name: car.name,
-                      alt: car.alt,
-                      description: car.description,
-                      price: car.price,
-                    })
+                    fetchSingleCar(car.id)
                   );
                 }}
               >
                 <div className="card1">
-                  <img className="lambo" src={car.carImage} alt={car.alt} />
+                  <img className="lambo" src={car.image_url} alt={car.model} />
                 </div>
                 <h3 className="model-name">{car.name}</h3>
                 <hr className="small-line" />
                 <h6 className="lambo-info">
-                  Lamborghini 350 GT at the Turin Motor Show
+                  {car.description} <br />
                 </h6>
               </Link>
               <div className="logos-fonts">
