@@ -1,8 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import mainpageSlice from "./mainpage_reducer";
+import { configureStore , combineReducers } from "@reduxjs/toolkit";
+import carsReducer from "./mainpage_reducer";
+
+const rootReducer = combineReducers({
+  cars: carsReducer,
+})
 
 const store = configureStore({
-  reducer: { mainPage: mainpageSlice.reducer },
+ reducer: rootReducer
 });
 
 export default store;
