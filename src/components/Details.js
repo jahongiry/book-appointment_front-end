@@ -1,6 +1,5 @@
 import "./Details.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import image from "../img/lambo.webp";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
