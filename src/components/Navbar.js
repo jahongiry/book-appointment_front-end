@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from '../img/logo3.png';
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../img/logo3.png";
 
 function Navbar() {
   return (
@@ -11,11 +11,6 @@ function Navbar() {
           <li className="navbar-toggle logo">
             <Link to="/mainpage" className="menu-bars">
               <img className="logo" src={logo} alt="Lambo logo"></img>
-            </Link>
-          </li>
-          <li className="navbar-toggle reserve">
-            <Link to="/carform" className="menu-bars">
-              Car Form
             </Link>
           </li>
           <li className="navbar-toggle reserve">
@@ -31,6 +26,16 @@ function Navbar() {
           <li className="navbar-toggle reserve">
             <Link to="/removecar" className="menu-bars">
               Remove
+            </Link>
+          </li>
+          <li className="navbar-toggle reserve">
+            <Link to="/addcars" className="menu-bars">
+              Add Cars
+            </Link>
+          </li>
+          <li className="navbar-toggle reserve">
+            <Link to="/" className="menu-bars">
+              Log out
             </Link>
           </li>
           <li className="icons">

@@ -1,8 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
-import testingReducer from './test_reducer';
+import { configureStore , combineReducers } from "@reduxjs/toolkit";
+import carsReducer from "./mainpage_reducer";
+import { userReducer } from "./user_reducer";
+
+const rootReducer = combineReducers({
+  cars: carsReducer,
+  user: userReducer,
+
+})
 
 const store = configureStore({
-  reducer: { test: testingReducer },
+ reducer: rootReducer
 });
 
 export default store;

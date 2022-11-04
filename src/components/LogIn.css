@@ -19,9 +19,12 @@
   font-size: 3rem;
 }
 
-/* .email-login {
-  background-color: rgb(151, 191, 15);
-} */
+.login-info {
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
 
 .input-email[type="text"] {
   width: 100%;

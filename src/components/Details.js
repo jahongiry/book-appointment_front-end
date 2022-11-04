@@ -1,13 +1,28 @@
 import "./Details.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import image from "../img/lambo.webp";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { fetchSingleCar } from "../store/mainpage_reducer";
+import { useEffect } from "react";
 
 function Details() {
+  
+  // const carImage = useSelector((state) => state.mainPage.carImage);
+  // const name = useSelector((state) => state.mainPage.name);
+  // const alt = useSelector((state) => state.mainPage.alt);
+  // const description = useSelector((state) => state.mainPage.description);
+  // const price = useSelector((state) => state.mainPage.price);
+  
+  const car = useSelector((state) => state.cars.car)
+  // useEffect(() => {
+  //   dispatch(fetchSingleCar(car.id))
+  // } , [dispatch])
+  
+  
   return (
     <div className="details-container">
       <div>
-        <img className="details-img" src={image} alt="lambo image" />
+        <img className="details-img" src={car.image_url} alt={car.model} />
         <Link to="/mainpage" className="more-model">
           <div className="left">
             <button className="back-button">
@@ -17,9 +32,10 @@ function Details() {
         </Link>
       </div>
       <div className="side-card">
-        <h3>Lambo 500</h3>
+        <h3>{car.name}</h3>
         <p className="description-details">
-          description about this type of Lambo
+          {car.description} <br />
+          Price: ${car.cost}
         </p>
 
         <Link to="/mainpage" className="more-model">
@@ -31,7 +47,9 @@ function Details() {
             />
           </h4>
         </Link>
+        <Link to="/reserve_form">
         <button className="reserve-button">Reserve</button>
+        </Link>
       </div>
     </div>
   );
