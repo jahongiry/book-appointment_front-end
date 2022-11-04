@@ -12,6 +12,7 @@ import Reservations from "./components/Reservations";
 import ReserveForm from "./components/ReserveForm";
 import AddCars from "./components/AddCars";
 import Remove from "./components/RemoveCars";
+import Register from "./components/signup";
 
 function App() {
 
@@ -22,12 +23,13 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/reservatons" exact element={<Reservations />} />
-          <Route path="/" exact element={<LogIn />} />
+          <Route path="/signin" exact element={<LogIn />} />
           <Route path="/mainpage" exact element={<MainPage />} />
           <Route path="/reserve_form" exact element={<ReserveForm />} />
           <Route path="/details/:id" exact element={<Details />} />
           <Route path="/addcars" exact element={<AddCars />} />
           <Route path="/removecar" exact element={<Remove />} />
+          <Route path="/register" exact element={<Register />} />
         </Routes>
       </Router>
     </div>
