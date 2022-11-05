@@ -14,6 +14,7 @@ function Details() {
   // const price = useSelector((state) => state.mainPage.price);
   
   const car = useSelector((state) => state.cars.car)
+  console.log(car.id)
   // useEffect(() => {
   //   dispatch(fetchSingleCar(car.id))
   // } , [dispatch])
