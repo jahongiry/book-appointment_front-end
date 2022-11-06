@@ -34,23 +34,20 @@ export const fetchAllReservations = (userid) => (async (dispatch) => {
 
 const createReservation = async (dataReservation) => {
         const { userid , carId , date , city , model } = dataReservation;
-        const reservation = {
+        try {
+        const response = await axios.post(`${BASE_URL}/add_reservation`, {
             user_id: userid,
             car_id: carId,
             reservation_date: date,
             location: city,
-            model
-        }
-        const response = await axios.post(`${BASE_URL}/add_reservation`, {
-            headers: {
-                'Content-Type': 'application/json',
-                 'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify({reservation})
+            model: model
         });
+    } catch (error) {
+        console.log(error)
+    }
 
-        const data = await response.text()
-        console.log(data)
+        // const data = await response.text()
+        // console.log(data)
     }
 
 export const createNewReservation = (data) => async (dispatch) => {
@@ -73,9 +70,7 @@ const reservationsReducer = (state = initialState , {type , payload}) => {
 
         case CREATE_RESERVATION:
             return {
-                ...state,
-                 payload
-            }
+                ...state ,payload}
 
         default:
             return state

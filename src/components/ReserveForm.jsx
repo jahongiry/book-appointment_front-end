@@ -17,13 +17,11 @@ const ReserveForm = () => {
   const [date, setDate] = useState('')
   const [city, setCity] = useState('')
   const [model, setModel] = useState('')
-  const [carId, setCarId] = useState('')
+  const [carId, setCarId] = useState()
+  console.log('carId', carId)
   const newReservation = (e) => {
     e.preventDefault()
-    const reservation = {
-     userid , carId ,   date , city , model ,
-    }
-    dispatch(createNewReservation(reservation))
+    dispatch(createNewReservation({userid , carId ,   date , city , model ,}))
     setCarId('')
     setCity('')
     setDate('')
@@ -59,12 +57,14 @@ useEffect(() => {
         <div className='form-group'>
        
           <label className="form-lable"><strong>Choose A Car</strong></label>
-          <select className="form-control form-control-lg"
-          value={carId}
+          <select className="form-control form-control-lg" onChange={(e) =>  
+          setCarId(e.target.options[e.target.selectedIndex].value )
+        }
           
           placeholder='Choose Car'>
            {cars.map((car) => {
-                return <option onChange= {(e) => setCarId(e.target.value)} key={car.id}  value={car.id}>{car.name}</option>
+                return <option key={car.id} value={car.id}>{car.name}
+                </option>
            })}
 
           </select>
@@ -92,9 +92,7 @@ useEffect(() => {
           onChange={(e)=>{setModel(e.target.value)}}
           />
            </div>
-           {/* <Link to='/reservatons'> */}
            <button className="btn btn-dark" type='submit' >Make Reservation </button>
-           {/* </Link> */}
       </form>
       </div> 
       </div>
