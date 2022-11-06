@@ -33,14 +33,13 @@ export const fetchAllReservations = (userid) => (async (dispatch) => {
 
 
 const createReservation = async (dataReservation) => {
-        const { userid , carId , date , city , model } = dataReservation;
+        const { userid , carId , date , city } = dataReservation;
         try {
         const response = await axios.post(`${BASE_URL}/add_reservation`, {
             user_id: userid,
             car_id: carId,
             reservation_date: date,
             location: city,
-            model: model
         });
     } catch (error) {
         console.log(error)

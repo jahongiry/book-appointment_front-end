@@ -16,16 +16,14 @@ const ReserveForm = () => {
   const userid = userId || 1;
   const [date, setDate] = useState('')
   const [city, setCity] = useState('')
-  const [model, setModel] = useState('')
   const [carId, setCarId] = useState()
   console.log('carId', carId)
   const newReservation = (e) => {
     e.preventDefault()
-    dispatch(createNewReservation({userid , carId ,   date , city , model ,}))
+    dispatch(createNewReservation({userid , carId ,   date , city ,}))
     setCarId('')
     setCity('')
     setDate('')
-    setModel('')
   }
 
   // console.log(newReservation)
@@ -83,13 +81,6 @@ useEffect(() => {
           <label><strong>Please Enter City</strong></label>
           <input className="form-control form-control-lg" type='text' value={city}
           onChange={(e)=>{setCity(e.target.value)}}
-          />
-           </div>
-           <div className='form-group '>
-       
-          <label><strong>Please Enter Model</strong></label>
-          <input className="form-control form-control-lg" type='text' value={model}
-          onChange={(e)=>{setModel(e.target.value)}}
           />
            </div>
            <button className="btn btn-dark" type='submit' >Make Reservation </button>

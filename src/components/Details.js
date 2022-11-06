@@ -7,17 +7,9 @@ import { useEffect } from "react";
 
 function Details() {
   
-  // const carImage = useSelector((state) => state.mainPage.carImage);
-  // const name = useSelector((state) => state.mainPage.name);
-  // const alt = useSelector((state) => state.mainPage.alt);
-  // const description = useSelector((state) => state.mainPage.description);
-  // const price = useSelector((state) => state.mainPage.price);
   
   const car = useSelector((state) => state.cars.car)
-  console.log(car.id)
-  // useEffect(() => {
-  //   dispatch(fetchSingleCar(car.id))
-  // } , [dispatch])
+
   
   
   return (
