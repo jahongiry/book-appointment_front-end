@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/reservatons" exact element={<Reservations />} />
+          <Route path="/reservations" exact element={<Reservations />} />
           <Route path="/" exact element={<LogIn />} />
           <Route path="/mainpage" exact element={<MainPage />} />
           <Route path="/reserve_form" exact element={<ReserveForm />} />
