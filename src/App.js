@@ -15,15 +15,13 @@ import Remove from "./components/RemoveCars";
 import Register from "./components/signup";
 
 function App() {
-
-
   return (
     <div className="App">
       <Router>
         <Navbar />
         <Routes>
           <Route path="/reservatons" exact element={<Reservations />} />
-          <Route path="/signin" exact element={<LogIn />} />
+          <Route path="/" exact element={<LogIn />} />
           <Route path="/mainpage" exact element={<MainPage />} />
           <Route path="/reserve_form" exact element={<ReserveForm />} />
           <Route path="/details/:id" exact element={<Details />} />
