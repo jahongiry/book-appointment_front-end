@@ -15,7 +15,7 @@ function Details() {
   return (
     <div className="details-container">
       <div>
-        <img className="details-img" src={car.image_url} alt={car.model} />
+        <img className="details-img" src={car.image_url} alt={car.name} />
         <Link to="/mainpage" className="more-model">
           <div className="left">
             <button className="back-button">
