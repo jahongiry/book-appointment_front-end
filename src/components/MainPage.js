@@ -89,7 +89,7 @@ function MainPage() {
             onClick={() => {
               setRight(true);
 
-              if (initial <= cars.length - 6) {
+              if (initial <= cars.length - 3) {
                 setInitial(initial + 3);
               }
             }}
