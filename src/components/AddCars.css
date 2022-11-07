@@ -11,7 +11,6 @@
 }
 
 .heading-for-add {
-  margin-top: 10rem;
   font-weight: 700;
   font-family: fantasy;
   font-size: 4rem;
@@ -21,11 +20,9 @@
 .addcar-container::after {
   content: "";
   opacity: 0.25;
-  background: url("../img/car-bg.jpg") fixed top;
+  background: url("../img/car-bg.jpg");
   background-size: cover;
   background-blend-mode: luminosity;
-  background-size: cover;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;

@@ -24,6 +24,7 @@
   display: grid;
   gap: 1rem;
   margin-top: 3rem;
+  margin-left: 35rem;
 }
 
 .btn-login {
@@ -59,4 +60,53 @@
 .input-email[type="text"]:focus {
   background-color: rgb(151, 191, 15);
   outline: none;
+}
+
+@media screen and (max-width: 1397px) {
+  .btn-register {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .btn-register {
+    width: 70%;
+  }
+  .login-info {
+    margin-left: 30rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .login-info {
+    grid-template-columns: 1fr;
+  }
+  .btn-register {
+    width: 100%;
+  }
+  .login-info {
+    margin-left: 18rem;
+  }
+  .btn-login {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login-info {
+    margin-left: 12rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .login-info {
+    margin-left: 10rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .login-info {
+    margin-left: 8rem;
+  }
 }

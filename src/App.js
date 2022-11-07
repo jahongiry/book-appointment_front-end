@@ -15,10 +15,12 @@ import Remove from "./components/RemoveCars";
 import Register from "./components/signup";
 
 function App() {
+  const state = useSelector((state) => state.user);
+  console.log(state.loggedIn);
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        {state.loggedIn === "in" && <Navbar />}
         <Routes>
           <Route path="/reservations" exact element={<Reservations />} />
           <Route path="/" exact element={<LogIn />} />
