@@ -3,9 +3,12 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../img/logo3.png";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../store/user_reducer";
 import { faSolid, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
+  const dispatch = useDispatch()
   const [burger, setBurger] = useState(true);
   const [mobile, setmobile] = useState(false);
 
@@ -68,6 +71,7 @@ function Navbar() {
                 className="menu-bars"
                 onClick={() => {
                   setBurger(!burger);
+                  dispatchEvent()
                 }}
               >
                 Add Cars
@@ -79,6 +83,7 @@ function Navbar() {
                 className="menu-bars"
                 onClick={() => {
                   setBurger(!burger);
+                  dispatch(logout())
                 }}
               >
                 Log out

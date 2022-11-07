@@ -23,6 +23,18 @@ export const logIn = (payload) => ({
     payload
 })
 
+export const logOut = () => {
+    return {
+        type: LOG_OUT,
+        payload: {
+            name: '',
+            loggedIn: false,
+            userId: '',
+            signedUp: false
+        }
+    }
+}
+
 export const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case SIGN_UP:
@@ -32,6 +44,9 @@ export const userReducer = (state = initialState, action) => {
         case LOG_IN:
            return action.payload 
         
+        case LOG_OUT:
+            return action.payload   
+        
         default:  
         return state  
     }
@@ -40,7 +55,7 @@ export const userReducer = (state = initialState, action) => {
 const sendSignupDetails = (details) => async (dispatch) => {
  const { firstName, lastName, username } = details;
  try {
-    await axios.post(`${BASE_URL}/signup`, {
+     const response = await axios.post(`${BASE_URL}/signup`, {
         first_name: firstName,
         last_name: lastName,
         username
@@ -54,8 +69,18 @@ const sendSignupDetails = (details) => async (dispatch) => {
         }
     ))
     } catch (error) {
-        console.log(error)
+        dispatch(signUp(
+            {
+                name: '',
+                loggedIn: false,
+                userId: '',
+                signedUp: 'error'
+            }
+        )
+        )
     }
+ console.log(response)
+   
  }
 
  export const sendSigninDetails = (details) => async (dispatch) => {
@@ -85,8 +110,21 @@ const sendSignupDetails = (details) => async (dispatch) => {
         dispatch(logIn(userDate)) 
 
     } catch (error) {
-       console.log(error)
+        dispatch(logIn(
+            {
+                name: '',
+                loggedIn: false,
+                userId: '',
+                signedUp: false
+            }
+        ))
     }
+}
+
+export const logout = () => (dispatch) => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    dispatch(logOut())
 }
 
 

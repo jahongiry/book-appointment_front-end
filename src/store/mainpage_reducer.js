@@ -7,6 +7,7 @@ const BASE_URL = "http://127.0.0.1:3000/api/v1"
 
 const ALL_CARS = 'ALL_CARS';
 const SINGLE_CAR = 'SINGLE_CAR';
+const ADD_CAR = 'ADD_CAR';
 
 // Initial state
 
@@ -15,7 +16,7 @@ const initialState = {
  car: {}
 };
 
-// actions     
+// get data from api    
 
 export const fetchCars = async () => {
     const response = await axios.get(`${BASE_URL}/all_cars`);
@@ -29,7 +30,20 @@ export const fetchCarDetails = async (id) => {
   return response.data;
 }
 
-// get data from API
+export const addCar = async ({ name, description, price, image , userid }) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/add_car`, {
+      name: name,
+      description: description,
+      owner: userid,
+      cost: price,
+      image_url: image,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+// actions
 
 export const fetchSingleCar = (id) => {
   return async (dispatch) => {
@@ -50,21 +64,34 @@ export const fetchAllCars = () => (async (dispatch) => {
   });
 });
 
+export const createNewCar = (data) => async (dispatch) => {
+  const response = await addCar(data);
+  dispatch({
+    type: ADD_CAR,
+    payload: response
+  })
+}
+
 // Reducer
 
-const carsReducer = (state = initialState , action) => {
-      switch (action.type) {
+const carsReducer = (state = initialState , {type , payload}) => {
+      switch (type) {
         case ALL_CARS:
           return {
             ...state, 
-             cars: action.payload
+             cars: payload
           }
   
         case SINGLE_CAR:
           return {
             ...state.car,
-            car: action.payload
+            car: payload
           }
+
+        case ADD_CAR:
+           return {
+            ...state , payload
+           }   
 
           default: 
           return state

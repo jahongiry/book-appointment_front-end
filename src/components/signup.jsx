@@ -7,7 +7,7 @@ import sendSignupDetails from '../store/user_reducer';
 const Register = () => {
     const navigate = useNavigate();
     const homePage = () => {
-        navigate('/mainpage') , { replace: true }
+        navigate('/') , { replace: true }
     }
 
     const dispatch = useDispatch();

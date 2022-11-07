@@ -17,7 +17,7 @@ import Register from "./components/signup";
 function App() {
   const state = useSelector((state) => state.user);
 
-  const logIn = JSON.parse(localStorage.getItem("user"));
+  const logIn = JSON.parse(localStorage.getItem("user")) || state;
 
   console.log(logIn.loggedIn);
   return (
