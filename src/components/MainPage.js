@@ -1,34 +1,27 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import car from "../img/lambo.webp";
-import "./MainPage.css";
-import { Link } from "react-router-dom";
-import { useDispatch , useSelector } from "react-redux";
-// import { mainpageActions } from "../store/mainpage_reducer";
-import { useEffect, useState } from "react";
-import { fetchAllCars } from '../store/mainpage_reducer'
-import { fetchSingleCar }  from "../store/mainpage_reducer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import car from '../img/lambo.webp';
+import './MainPage.css';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { fetchAllCars, fetchSingleCar } from '../store/mainpage_reducer';
 
 function MainPage() {
-  const [initial, setInitial] = useState(0 || []);
+  const [initial, setInitial] = useState(0);
   const [right, setRight] = useState(true);
   const dispatch = useDispatch();
-  const cars = useSelector(state => state.cars.cars)
+  const cars = useSelector((state) => state.cars.cars);
   useEffect(() => {
-    dispatch(fetchAllCars())
-  } , [dispatch])
+    dispatch(fetchAllCars());
+  }, [dispatch]);
 
-
-
-  const carsTest = (arr) => {
-    return arr.slice(initial, initial + 3);
-  };
+  const carsTest = (arr) => arr.slice(initial, initial + 3);
   const nextCars = carsTest(cars || []);
   const chooseName = () => {
     if (right === true) {
-      return "first";
-    } else {
-      return "second";
+      return 'first';
     }
+    return 'second';
   };
   const classNaming = chooseName();
   return (
@@ -41,7 +34,7 @@ function MainPage() {
           <button
             onClick={() => {
               setRight(false);
-              if (initial !== 0) {
+              if (initial > 0) {
                 setInitial(initial - 3);
               }
             }}
@@ -58,9 +51,7 @@ function MainPage() {
                 to={`/details/${car.id}`}
                 className="to-deatils-link"
                 onClick={() => {
-                  dispatch(
-                    fetchSingleCar(car.id)
-                  );
+                  dispatch(fetchSingleCar(car.id));
                 }}
               >
                 <div className="card1">
@@ -69,7 +60,9 @@ function MainPage() {
                 <h3 className="model-name">{car.name}</h3>
                 <hr className="small-line" />
                 <h6 className="lambo-info">
-                  {car.description} <br />
+                  {car.description}
+                  {' '}
+                  <br />
                 </h6>
               </Link>
               <div className="logos-fonts">
@@ -93,7 +86,10 @@ function MainPage() {
           <button
             onClick={() => {
               setRight(true);
-              setInitial(initial + 3);
+
+              if (initial <= cars.length - 3) {
+                setInitial(initial + 3);
+              }
             }}
             type="button"
             className="next-button"

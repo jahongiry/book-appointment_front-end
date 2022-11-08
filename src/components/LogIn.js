@@ -2,18 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { sendSigninDetails } from '../store/user_reducer';
-import "./LogIn.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import './LogIn.css';
+/* eslint-disable  no-unused-vars */
 function LogIn() {
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.user);
-  console.log(state);
   const { loggedIn } = state;
-  const [signIn , setSignIn] = useState(loggedIn)
+  const [signIn, setSignIn] = useState(loggedIn);
   const [username, setUsername] = useState('');
   const loginUser = (e) => {
     e.preventDefault();
@@ -21,25 +17,24 @@ function LogIn() {
       username,
     };
     dispatch(sendSigninDetails(user));
-    setUsername('')
-  }
+    setUsername('');
+  };
+  /* eslint-enable  no-unused-vars */
 
   useEffect(() => {
-    setSignIn(loggedIn)
+    setSignIn(loggedIn);
     if (loggedIn === 'in') {
-      navigate('/mainpage') , { replace: true }
+      navigate('/mainpage');
     }
   }, [state]);
-
-
 
   return (
     <div className="login-container">
       <h1 className="login-heading">TRY NEW LUXURY CAR MODELS WITH US!</h1>
       <form className="email-login login-info" onSubmit={loginUser}>
-        
-        <label>
+        <label htmlFor="name">
           <input
+            id="name"
             className="input-email"
             type="text"
             name="username"
@@ -48,9 +43,15 @@ function LogIn() {
             value={username}
           />
         </label>
-        
-        <button type="submit" className="btn btn-success" >Login</button>
-        
+
+        <button type="submit" className="btn btn-success btn-login">
+          Login
+        </button>
+        <Link to="./register">
+          <button type="submit" className="btn btn-success btn-register">
+            New User? Sign up!
+          </button>
+        </Link>
       </form>
     </div>
   );

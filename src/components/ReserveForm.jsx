@@ -1,102 +1,109 @@
-import React, { useState } from "react"
-// import { reservations } from "./Reservations"
-import './Reservations.css'
-
-export const reservations = [{
-    id: 1,
-    model: 'Lexus',
-    brand: 'Lexus',
-    city: 'Sofia',
-    date: '2022-10-24'
-  },
-  {
-    id: 2,
-    model: 'Hyunda',
-    brand: 'Hyundai alvero',
-    city: 'Plovdiv',
-    date: '2022-10-24'
-  },
-  {
-    id: 3,
-    model: 'Lambo',
-    brand: 'Lamborghini',
-    city: 'Las vegas',
-    date: '2022-10-24'
-  },
-  {
-    id: 4, 
-    model: 'Bugatti',
-    brand: 'Bugatti',
-    city: 'Las vegas',
-    date: '2022-10-24'
-  },
-  {
-    id: 5,
-    model: 'Ferrari',
-    brand: 'Ferrari',
-    city: 'Las vegas',
-    date: '2022-10-24'
-  }]
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createNewReservation } from "../store/reservationReducer";
+import { fetchAllCars } from "../store/mainpage_reducer";
+import "./ReserveForm.css";
 
 const ReserveForm = () => {
-  const [reserves , setReservations] = useState(reservations)  
-  const [date, setDate] = useState('')
-  const [city, setCity] = useState('')
-  const [model, setModel] = useState('none selected')
-//   console.log(reservations)
-  
-    const handleSubmit = (e) =>{
-      e.preventDefault();
-        const newReserve = {
-            id: reserves.length + 1,
-            model, 
-            city,
-            date
-        }              
-       setReservations([...reserves, newReserve])  
-    }
-    return (
-  
-      
-      <div className='main'>
-        <h1>Reservation Form</h1>
-        <div className="card" style={{backgroundColor: 'lightgreen'}}>
-          <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-       
-          <label className="form-lable"><strong>Choose A Car model</strong></label>
-          <select className="form-control form-control-lg"
-          value={model}
-          onChange={(e) =>{setModel(e.target.value)}}
-          placeholder='Choose Model'>
-           {reservations.map((reservation) => {
-                return <option key={reservation.id} value={reservation.model}>{reservation.model}</option>
-           })}
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const cars = useSelector((state) => state.cars.cars);
 
-          </select>
-           
+  const { userId } = JSON.parse(window.localStorage.getItem("user"));
+  const userid = userId || 1;
+  const [date, setDate] = useState("");
+  const [city, setCity] = useState("");
+  const [carId, setCarId] = useState();
+  const newReservation = (e) => {
+    e.preventDefault();
+    dispatch(createNewReservation({ userid, carId, date, city }));
+    setCarId();
+    setCity("");
+    setDate("");
+    navigate("/reservations");
+  };
+
+  useEffect(() => {
+    dispatch(fetchAllCars());
+  }, [dispatch]);
+
+  return (
+    <div className="main">
+      <h1>Reservation Form</h1>
+      <div
+        className="card reserve-car-d"
+        style={{ backgroundColor: "lightgreen" }}
+      >
+        <form onSubmit={newReservation}>
+          <div className="form-group">
+            <label className="form-lable">
+              <strong>Choose A Car</strong>
+            </label>
+            <select
+              className="form-control form-control-lg"
+              onChange={(e) =>
+                setCarId(
+                  e.target.options[e.target.selectedIndex].value ||
+                    e.target.options[0].value
+                )
+              }
+              placeholder="Choose Car"
+            >
+              {cars.map((car) => {
+                return (
+                  <option
+                    key={car.id}
+                    value={car.id}
+                    placeholder="Choose A car"
+                  >
+                    {car.name}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-          <div className='form-group'>
-       
-          <label><strong>Choose A Date</strong></label>
-          <input className="form-control form-control-lg" type='date' value={date}
-          onChange={(e)=> {setDate(e.target.value)} }/>
-           
+          <div className="form-group">
+            <label>
+              <strong>Choose A Date</strong>
+            </label>
+            <input
+              className="form-control form-control-l input-r"
+              type="date"
+              value={date}
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
+            />
           </div>
-          <div className='form-group '>
-       
-          <label><strong>Please Enter City</strong></label>
-          <input className="form-control form-control-lg" type='text' value={city}
-          onChange={(e)=>{setCity(e.target.value)}}
+          <input
+            className="input-r"
+            type="hidden"
+            value={carId}
+            onChange={() => {
+              setCarId(cars);
+            }}
           />
-           </div>
-           <button className="btn btn-dark" type='submit'>Make Reservation </button>
-      </form>
-      </div> 
+          <div className="form-group ">
+            <label>
+              <strong>Please Enter City</strong>
+            </label>
+            <input
+              className="form-control form-control-lg input-r"
+              type="text"
+              value={city}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
+            />
+          </div>
+          <button className="btn btn-dark button-r" type="submit">
+            Make Reservation{" "}
+          </button>
+        </form>
       </div>
-     
-      
-    )
-  }
+    </div>
+  );
+};
 
-  export default ReserveForm
+export default ReserveForm;

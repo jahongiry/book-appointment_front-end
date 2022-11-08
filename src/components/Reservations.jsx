@@ -1,40 +1,41 @@
-import React from "react";
-import Reservation from "./Reservation";
-import { reservations } from "./ReserveForm";
-import './Reservations.css'
-
-
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllReservations } from "../store/reservationReducer";
+import "./Reservations.css";
 
 const Reservations = () => {
-  console.log(reservations);
+  const { userId } = JSON.parse(window.localStorage.getItem("user"));
+  const reservations = useSelector((state) => state.reservations.reservations);
+  const userid = userId || 1;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAllReservations(userid));
+  }, [dispatch]);
+ 
 
-    return (
-        <div className="main">
-           <h1>Reservations</h1>
-           
-        <div className='res-contain'>
-        <table className="table">
-      <thead className="thead-dark">
-        <tr><th scope="col">Car model</th>
-        <th scope="col">City</th>
-        <th scope="col">Date</th>
-        <th scope="col">action</th>
-        </tr>
-      </thead>
-        
-      <tbody>
-
-        {reservations.map((reservation, index) => {
-          return <Reservation key={index} {...reservation}  />
+  return (
+    <div className="reserve-all-container">
+      <h1>Reservations</h1>
+      <ul className="reserve-container">
+        {reservations.map((reservation , index) => (
           
-        })}
-       </tbody>
-       </table>
-    </div> 
-   
-   
-        </div>
-    )
-}
+          <div className="cards" key={index}>
+            <img
+              className="reserve-img"
+              src={reservation.car.image_url}
+              alt="lux car"
+            />
+            <h2 className="name-reserve">
+              Name of the reserved car: {reservation.car.name}
+            </h2>
+            <p>Location: {reservation.location}</p>
+            <p>cost: {reservation.car.cost}</p>
+            <p>date: {reservation.reservation_date}</p>
+          </div>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default Reservations
+export default Reservations;
