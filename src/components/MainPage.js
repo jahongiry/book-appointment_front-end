@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import car from "../img/lambo.webp";
-import "./MainPage.css";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { fetchAllCars } from "../store/mainpage_reducer";
-import { fetchSingleCar } from "../store/mainpage_reducer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import car from '../img/lambo.webp';
+import './MainPage.css';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { fetchAllCars, fetchSingleCar } from '../store/mainpage_reducer';
 
 function MainPage() {
   const [initial, setInitial] = useState(0);
@@ -16,16 +15,13 @@ function MainPage() {
     dispatch(fetchAllCars());
   }, [dispatch]);
 
-  const carsTest = (arr) => {
-    return arr.slice(initial, initial + 3);
-  };
+  const carsTest = (arr) => arr.slice(initial, initial + 3);
   const nextCars = carsTest(cars || []);
   const chooseName = () => {
     if (right === true) {
-      return "first";
-    } else {
-      return "second";
+      return 'first';
     }
+    return 'second';
   };
   const classNaming = chooseName();
   return (
@@ -64,7 +60,9 @@ function MainPage() {
                 <h3 className="model-name">{car.name}</h3>
                 <hr className="small-line" />
                 <h6 className="lambo-info">
-                  {car.description} <br />
+                  {car.description}
+                  {' '}
+                  <br />
                 </h6>
               </Link>
               <div className="logos-fonts">

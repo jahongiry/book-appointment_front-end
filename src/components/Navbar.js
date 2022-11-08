@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../img/logo3.png";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { logout } from "../store/user_reducer";
-import { faSolid, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { logout } from '../store/user_reducer';
+import logo from '../img/logo3.png';
 
 function Navbar() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [burger, setBurger] = useState(true);
-  const [mobile, setmobile] = useState(false);
+  // const [mobile, setmobile] = useState(false);
 
   return (
     <>
@@ -25,11 +25,11 @@ function Navbar() {
           {burger && <FontAwesomeIcon icon="fa-solid fa-bars" />}
           {!burger && <FontAwesomeIcon icon={faXmark} />}
         </button>
-        <nav className={"nav-menu " + (burger ? "active" : "")}>
+        <nav className={`nav-menu ${burger ? 'active' : ''}`}>
           <ul className="nav-menu-items mobile">
             <li className="navbar-toggle logo">
               <Link to="/mainpage" className="menu-bars">
-                <img className="logo" src={logo} alt="Lambo logo"></img>
+                <img className="logo" src={logo} alt="Lambo logo" />
               </Link>
             </li>
             <li className="navbar-toggle reserve">
@@ -71,7 +71,7 @@ function Navbar() {
                 className="menu-bars"
                 onClick={() => {
                   setBurger(!burger);
-                  dispatchEvent()
+                  dispatchEvent();
                 }}
               >
                 Add Cars
@@ -83,7 +83,7 @@ function Navbar() {
                 className="menu-bars"
                 onClick={() => {
                   setBurger(!burger);
-                  dispatch(logout())
+                  dispatch(logout());
                 }}
               >
                 Log out

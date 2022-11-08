@@ -1,14 +1,11 @@
-import React from "react";
-import "./Reservations.css";
-import { useSelector , useDispatch } from "react-redux";
-import { deleteCarAction } from "../store/mainpage_reducer";
-
-
+import React from 'react';
+import './Reservations.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteCarAction } from '../store/mainpage_reducer';
 
 const Remove = () => {
-  const dispatch = useDispatch()
-  const cars = useSelector(state => state.cars.cars)
-
+  const dispatch = useDispatch();
+  const cars = useSelector((state) => state.cars.cars);
 
   return (
     <div className="main">
@@ -23,21 +20,23 @@ const Remove = () => {
               <th scope="col">action</th>
             </tr>
           </thead>
-          <tbody >
-         { cars.map((car , index) => {
-           return (
-            <tr key={index}>
-            <td scope="col">{car.name}</td>
-            <td scope="col">{car.cost}</td>
-            <th scope="col" ><button type="submit"  onClick={() => dispatch(deleteCarAction(car.id))
-               (window.location.reload(false)) }>remove</button></th>
-            </tr>
-           )
-         })
+          <tbody>
+            { cars.map((car) => (
+              <tr key={car.id}>
+                <td>{car.name}</td>
+                <td>{car.cost}</td>
+                <th scope="col">
+                  <button
+                    type="submit"
+                    onClick={() => dispatch(deleteCarAction(car.id))(window.location.reload(false))}
+                  >
+                    remove
+                  </button>
+                </th>
+              </tr>
+            ))}
+          </tbody>
 
-         }
-         </tbody> 
-          
         </table>
       </div>
     </div>

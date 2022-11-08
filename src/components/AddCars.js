@@ -1,41 +1,42 @@
-import {  useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { createNewCar } from "../store/mainpage_reducer";
-import "./AddCars.css";
-
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { createNewCar } from '../store/mainpage_reducer';
+import './AddCars.css';
 
 function AddCars() {
- const dispatch = useDispatch()
- const navigate = useNavigate()
- const { userId } = JSON.parse(window.localStorage.getItem("user"));
- const userid = userId
- const [name, setName] = useState("");
- const [description, setDescription] = useState("");
- const [price , setPrice] = useState();
- const [image, setImage] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userId } = JSON.parse(window.localStorage.getItem('user'));
+  const userid = userId;
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState();
+  const [image, setImage] = useState('');
 
- const newCar = (e) => {
-  e.preventDefault();
-  dispatch(createNewCar({
-    name,
-    description,
-    price,
-    image,
-    userid}))
-  setName("")
-  setDescription("")
-  setPrice()
-  setImage("")
-  navigate("/mainpage")
-}
+  const newCar = (e) => {
+    e.preventDefault();
+    dispatch(createNewCar({
+      name,
+      description,
+      price,
+      image,
+      userid,
+    }));
+    setName('');
+    setDescription('');
+    setPrice();
+    setImage('');
+    navigate('/mainpage');
+  };
 
   return (
     <div className="addcar-container">
       <h1 className="heading-for-add">Add Luxury cars to sell</h1>
       <form className="email-login add-car-form" onSubmit={newCar}>
-        <label>
+        <label htmlFor="name">
           <input
+            id="name"
             className="input-email"
             type="text"
             name="username"
@@ -44,8 +45,9 @@ function AddCars() {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <label>
+        <label htmlFor="description">
           <input
+            id="description"
             className="input-email"
             type="text"
             name="description"
@@ -54,8 +56,9 @@ function AddCars() {
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
-        <label>
+        <label htmlFor="price">
           <input
+            id="price"
             className="input-email"
             type="number"
             name="username"
@@ -64,8 +67,9 @@ function AddCars() {
             onChange={(e) => setPrice(e.target.value)}
           />
         </label>
-        <label className="linkcars">
+        <label htmlFor="image" className="linkcars">
           <input
+            id="image"
             className="input-email"
             type="text"
             name="username"
