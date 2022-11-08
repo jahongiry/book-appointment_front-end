@@ -6,6 +6,7 @@ import { fetchAllCars } from "../store/mainpage_reducer";
 import { deleteCarAction } from "../store/mainpage_reducer";
 
 
+
 const Remove = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -15,10 +16,7 @@ const Remove = () => {
   //   dispatch(fetchAllCars())
   // } , [dispatch])
 
-  // const handleDelete = (id) => {
-    
-  // }
-
+ 
 
   
   console.log(cars)
@@ -42,7 +40,8 @@ const Remove = () => {
             <tr key={index}>
             <td scope="col">{car.name}</td>
             <td scope="col">{car.cost}</td>
-            <th scope="col"><button type="submit" onClick={() => dispatch(deleteCarAction(car.id))}>remove</button></th>
+            <th scope="col" ><button type="submit"  onClick={() => dispatch(deleteCarAction(car.id))
+               (window.location.reload(false)) }>remove</button></th>
             </tr>
            )
          })

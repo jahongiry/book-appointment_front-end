@@ -1,5 +1,6 @@
 import React, { useState , useEffect } from "react"
 import { useSelector , useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { createNewReservation } from "../store/reservationReducer"
 import { fetchAllCars } from '../store/mainpage_reducer'
 // import { reservations } from "./Reservations"
@@ -9,6 +10,7 @@ import { Link } from "react-router-dom"
 
 const ReserveForm = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const cars = useSelector(state => state.cars.cars)
   const reservations = useSelector(state => state.reservations.reservations)
   // const carId = cars.id
@@ -21,9 +23,10 @@ const ReserveForm = () => {
   const newReservation = (e) => {
     e.preventDefault()
     dispatch(createNewReservation({userid , carId ,   date , city ,}))
-    setCarId('')
+    setCarId()
     setCity('')
     setDate('')
+    navigate('/reservations')
   }
 
   // console.log(newReservation)
@@ -56,13 +59,12 @@ useEffect(() => {
        
           <label className="form-lable"><strong>Choose A Car</strong></label>
           <select className="form-control form-control-lg" onChange={(e) =>  
-          setCarId(e.target.options[e.target.selectedIndex].value )
+          setCarId(e.target.options[e.target.selectedIndex].value || e.target.options[0].value )
         }
           
           placeholder='Choose Car'>
            {cars.map((car) => {
-                return <option key={car.id} value={car.id}>{car.name}
-                </option>
+                return <option key={car.id} value={car.id} placeholder="Choose A car">{car.name}</option>
            })}
 
           </select>

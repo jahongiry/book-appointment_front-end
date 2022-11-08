@@ -1,11 +1,13 @@
 import { useEffect , useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { createNewCar } from "../store/mainpage_reducer";
 import "./AddCars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function AddCars() {
  const dispatch = useDispatch()
+ const navigate = useNavigate()
  const { userId } = JSON.parse(window.localStorage.getItem("user"));
  const userid = userId
  const [name, setName] = useState("");
@@ -25,6 +27,7 @@ function AddCars() {
   setDescription("")
   setPrice()
   setImage("")
+  navigate("/mainpage")
 }
 
   return (
