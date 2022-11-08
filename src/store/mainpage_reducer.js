@@ -40,7 +40,7 @@ export const addCar = async ({
       image_url: image,
     });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 

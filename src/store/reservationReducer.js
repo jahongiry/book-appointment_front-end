@@ -40,7 +40,7 @@ const createReservation = async (dataReservation) => {
       location: city,
     });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 

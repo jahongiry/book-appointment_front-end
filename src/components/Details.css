@@ -1,16 +1,3 @@
-/* .login-container {
-  background-color: #ffb400;
-  height: 100vh;
-  background-image: url("../img/lambo.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 70rem 50rem;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  flex-direction: column;
-} */
 
 .details-container {
   display: grid;

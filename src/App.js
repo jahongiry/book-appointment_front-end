@@ -16,7 +16,7 @@ import Register from './components/signup';
 import ReserveCar from './components/reserveCar';
 import { fetchAllCars } from './store/mainpage_reducer';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.user);
   useEffect(() => {
@@ -43,6 +43,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

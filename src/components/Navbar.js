@@ -10,7 +10,6 @@ import logo from '../img/logo3.png';
 function Navbar() {
   const dispatch = useDispatch();
   const [burger, setBurger] = useState(true);
-  // const [mobile, setmobile] = useState(false);
 
   return (
     <>

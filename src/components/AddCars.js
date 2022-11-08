@@ -43,6 +43,7 @@ function AddCars() {
             placeholder="Enter Car Name ..."
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </label>
         <label htmlFor="description">
@@ -54,6 +55,7 @@ function AddCars() {
             placeholder="Enter Description..."
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           />
         </label>
         <label htmlFor="price">
@@ -65,6 +67,7 @@ function AddCars() {
             placeholder="Price in US dollars $..."
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+            required
           />
         </label>
         <label htmlFor="image" className="linkcars">
@@ -76,6 +79,7 @@ function AddCars() {
             placeholder="Link of picture of the car..."
             value={image}
             onChange={(e) => setImage(e.target.value)}
+            required
           />
         </label>
         <button className="add-button" type="submit">

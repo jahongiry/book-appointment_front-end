@@ -15,6 +15,7 @@ const ReserveForm = () => {
   const [date, setDate] = useState("");
   const [city, setCity] = useState("");
   const [carId, setCarId] = useState();
+  console.log("carId", carId);
   const newReservation = (e) => {
     e.preventDefault();
     dispatch(createNewReservation({ userid, carId, date, city }));
@@ -44,12 +45,12 @@ const ReserveForm = () => {
               className="form-control form-control-lg"
               onChange={(e) =>
                 setCarId(
-                  e.target.options[e.target.selectedIndex].value ||
-                    e.target.options[0].value
+                  e.target.options[e.target.selectedIndex].value
                 )
               }
               placeholder="Choose Car"
             >
+              <option>Please choose A car</option>
               {cars.map((car) => {
                 return (
                   <option

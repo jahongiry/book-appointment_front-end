@@ -12,7 +12,6 @@ const Register = () => {
 
   const dispatch = useDispatch();
   const state = useSelector((state) => state.user);
-  console.log(state);
   const { signedUp } = state;
   const [signedUpSuccess, setSignedUpSuccess] = useState(signedUp);
   const [firstName, setFirstName] = useState("");

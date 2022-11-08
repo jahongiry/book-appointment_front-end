@@ -8,7 +8,6 @@ function ReserveCar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const car = useSelector((state) => state.cars.car);
-  console.log("car", car);
   const { userId } = JSON.parse(window.localStorage.getItem("user"));
   const userid = userId;
   const [date, setDate] = useState("");

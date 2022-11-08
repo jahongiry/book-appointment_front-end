@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import car from '../img/lambo.webp';
 import './MainPage.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
