@@ -1,4 +1,4 @@
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createNewCar } from "../store/mainpage_reducer";
@@ -74,7 +74,9 @@ function AddCars() {
             onChange={(e) => setImage(e.target.value)}
           />
         </label>
-        <button className="login-button" type="submit">ADD</button>
+        <button className="add-button" type="submit">
+          Add
+        </button>
       </form>
     </div>
   );
