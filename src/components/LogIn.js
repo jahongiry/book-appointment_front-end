@@ -10,7 +10,6 @@ function LogIn() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.user);
-  console.log(state);
   const { loggedIn } = state;
   const [signIn, setSignIn] = useState(loggedIn);
   const [username, setUsername] = useState("");

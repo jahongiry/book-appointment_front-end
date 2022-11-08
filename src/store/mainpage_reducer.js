@@ -1,4 +1,3 @@
-// import { createSlice } from "@reduxjs/toolkit";
 import axios from 'axios'
 
 const BASE_URL = "http://127.0.0.1:3000/api/v1"
@@ -21,13 +20,11 @@ const initialState = {
 
 export const fetchCars = async () => {
     const response = await axios.get(`${BASE_URL}/all_cars`);
-    // console.log(response)
     return response.data;
 };
 
 export const fetchCarDetails = async (id) => {
   const response = await axios.get(`${BASE_URL}/show_car/${id}`);
-  // console.log(response);
   return response.data;
 }
 

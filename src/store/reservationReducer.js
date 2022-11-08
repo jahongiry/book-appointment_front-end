@@ -18,7 +18,6 @@ const fetchReservations = async (userid) => {
              'Authorization': `Bearer ${localStorage.getItem('token')}`
            }
         });
-    // console.log(response)
     return response.data;
 }
 
@@ -44,9 +43,6 @@ const createReservation = async (dataReservation) => {
     } catch (error) {
         console.log(error)
     }
-
-        // const data = await response.text()
-        // console.log(data)
     }
 
 export const createNewReservation = (data) => async (dispatch) => {

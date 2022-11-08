@@ -14,7 +14,6 @@ function ReserveCar() {
   const [date, setDate] = useState("");
   const [city, setCity] = useState("");
   const [carId, setCarId] = useState(car.id);
-  console.log("carId", carId);
   const newReservation = (e) => {
     e.preventDefault();
     dispatch(createNewReservation({ userid, carId, date, city }));
