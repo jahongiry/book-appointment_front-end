@@ -1,4 +1,4 @@
-/* .table {
+.table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
@@ -17,13 +17,6 @@
   margin: 4% auto;
   justify-content: space-between;
 }
-
-form {
-  width: 50%;
-  margin: 150px auto;
-
-  /* background-color: green; */
-/* }
 
 form > div {
   width: 100%;
@@ -46,7 +39,7 @@ form label {
 
 .form-wrapper {
   background-color: lightgreen;
-} */
+}
 
 .reserve-all-container {
   margin: 0 3rem 3rem 14rem;
