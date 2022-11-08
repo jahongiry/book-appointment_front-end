@@ -8,6 +8,7 @@ const BASE_URL = "http://127.0.0.1:3000/api/v1"
 const ALL_CARS = 'ALL_CARS';
 const SINGLE_CAR = 'SINGLE_CAR';
 const ADD_CAR = 'ADD_CAR';
+const DELETE_CAR = 'DELETE_CAR'
 
 // Initial state
 
@@ -30,6 +31,8 @@ export const fetchCarDetails = async (id) => {
   return response.data;
 }
 
+
+
 export const addCar = async ({ name, description, price, image , userid }) => {
   try {
     const response = await axios.post(`${BASE_URL}/add_car`, {
@@ -43,6 +46,11 @@ export const addCar = async ({ name, description, price, image , userid }) => {
     console.log(error);
   }
 }
+
+export const deleteCar = async (id) => {
+  const response = await axios.delete(`${BASE_URL}/cars/${id}`)
+  return response.data;
+}
 // actions
 
 export const fetchSingleCar = (id) => {
@@ -51,6 +59,15 @@ export const fetchSingleCar = (id) => {
     dispatch({
       type: SINGLE_CAR,
       payload: response
+    })
+  }
+}
+
+export const deleteCarAction = (id) => {
+  return async (dispatch) => {
+    await deleteCar(id);
+    dispatch({
+      type: DELETE_CAR
     })
   }
 }

@@ -1,34 +1,34 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { createNewCar } from "../store/mainpage_reducer";
 import "./AddCars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function AddCars() {
-  const dispatch = useDispatch();
-  const { userId } = JSON.parse(window.localStorage.getItem("user"));
-  const userid = userId;
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState();
-  const [image, setImage] = useState("");
+ const dispatch = useDispatch()
+ const navigate = useNavigate()
+ const { userId } = JSON.parse(window.localStorage.getItem("user"));
+ const userid = userId
+ const [name, setName] = useState("");
+ const [description, setDescription] = useState("");
+ const [price , setPrice] = useState();
+ const [image, setImage] = useState("");
 
-  const newCar = (e) => {
-    e.preventDefault();
-    dispatch(
-      createNewCar({
-        name,
-        description,
-        price,
-        image,
-        userid,
-      })
-    );
-    setName("");
-    setDescription("");
-    setPrice();
-    setImage("");
-  };
+ const newCar = (e) => {
+  e.preventDefault();
+  dispatch(createNewCar({
+    name,
+    description,
+    price,
+    image,
+    userid}))
+  setName("")
+  setDescription("")
+  setPrice()
+  setImage("")
+  navigate("/mainpage")
+}
 
   return (
     <div className="addcar-container">
