@@ -1,7 +1,9 @@
 import React from 'react';
-import './Reservations.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { deleteCarAction } from '../store/mainpage_reducer';
+import './RemoveCars.css';
 
 const Remove = () => {
   const dispatch = useDispatch();
@@ -11,7 +13,7 @@ const Remove = () => {
     <div className="main">
       <h1>Remove cars from list</h1>
 
-      <div className="res-contain">
+      <div className="res-contain remove-container">
         <table className="table">
           <thead className="thead-dark">
             <tr>
@@ -21,22 +23,25 @@ const Remove = () => {
             </tr>
           </thead>
           <tbody>
-            { cars.map((car) => (
-              <tr key={car.id}>
+            {cars.map((car) => (
+              <tr key={car.id} className="lines">
                 <td>{car.name}</td>
                 <td>{car.cost}</td>
                 <th scope="col">
                   <button
+                    className="remove-btn"
                     type="submit"
-                    onClick={() => dispatch(deleteCarAction(car.id))(window.location.reload(false))}
+                    onClick={() => dispatch(deleteCarAction(car.id))(
+                      window.location.reload(false),
+                    )}
                   >
+                    <FontAwesomeIcon icon={faTrash} className="trashcan" />
                     remove
                   </button>
                 </th>
               </tr>
             ))}
           </tbody>
-
         </table>
       </div>
     </div>

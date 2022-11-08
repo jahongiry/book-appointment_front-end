@@ -1,0 +1,52 @@
+.remove-container {
+  overflow: visible;
+  padding: 1rem;
+  margin: auto;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 41px;
+  background: linear-gradient(315deg, #e6e6e6, #ffffff);
+  box-shadow: -5px -5px 10px #d9d9d9, 5px 5px 10px #ffffff;
+}
+
+.remove-btn {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: all 1s;
+}
+
+.trashcan {
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+.remove-btn:hover {
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.365);
+}
+
+.lines {
+  transition: all 0.5s;
+}
+
+.lines:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 1401px) {
+  .remove-container {
+    margin-right: 12rem;
+  }
+}
+@media (max-width: 1200px) {
+  .remove-container {
+    margin-right: 7rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .remove-container {
+    margin: auto !important;
+    font-size: 60%;
+  }
+}
