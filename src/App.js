@@ -1,7 +1,6 @@
 import React , {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { testActions } from "./store/test_reducer";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
@@ -14,6 +13,7 @@ import ReserveForm from "./components/ReserveForm";
 import AddCars from "./components/AddCars";
 import Remove from "./components/RemoveCars";
 import Register from "./components/signup";
+import ReserveCar from "./components/reserveCar";
 import { fetchAllCars } from "./store/mainpage_reducer";
 
 
@@ -26,7 +26,6 @@ function App() {
 
   const logIn = JSON.parse(localStorage.getItem("user")) || state;
 
-  console.log(logIn.loggedIn);
   return (
     <div className="App">
       <Router>
@@ -40,6 +39,7 @@ function App() {
           <Route path="/addcars" exact element={<AddCars />} />
           <Route path="/removecar" exact element={<Remove />} />
           <Route path="/register" exact element={<Register />} />
+          <Route path="/reserveCar" exact element={<ReserveCar />} />
         </Routes>
       </Router>
     </div>

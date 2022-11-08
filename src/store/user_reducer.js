@@ -79,7 +79,6 @@ const sendSignupDetails = (details) => async (dispatch) => {
         )
         )
     }
- console.log(response)
    
  }
 
@@ -101,7 +100,6 @@ const sendSignupDetails = (details) => async (dispatch) => {
             userId: user.id,
             signedUp: true
         }
-        console.log(userDate)
 
            
         

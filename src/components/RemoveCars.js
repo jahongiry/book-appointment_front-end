@@ -1,25 +1,14 @@
-import React,{useEffect} from "react";
+import React from "react";
 import "./Reservations.css";
 import { useSelector , useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { fetchAllCars } from "../store/mainpage_reducer";
 import { deleteCarAction } from "../store/mainpage_reducer";
 
 
 
 const Remove = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const cars = useSelector(state => state.cars.cars)
-  
-  // useEffect(() => {
-  //   dispatch(fetchAllCars())
-  // } , [dispatch])
 
- 
-
-  
-  console.log(cars)
 
   return (
     <div className="main">

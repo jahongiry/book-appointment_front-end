@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sendSigninDetails } from "../store/user_reducer";
 import "./LogIn.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function LogIn() {
   const navigate = useNavigate();

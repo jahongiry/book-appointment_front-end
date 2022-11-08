@@ -3,7 +3,6 @@ import car from "../img/lambo.webp";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { mainpageActions } from "../store/mainpage_reducer";
 import { useEffect, useState } from "react";
 import { fetchAllCars } from "../store/mainpage_reducer";
 import { fetchSingleCar } from "../store/mainpage_reducer";
@@ -16,10 +15,11 @@ function MainPage() {
   useEffect(() => {
     dispatch(fetchAllCars());
   }, [dispatch]);
+
   const carsTest = (arr) => {
     return arr.slice(initial, initial + 3);
   };
-  const nextCars = carsTest(cars);
+  const nextCars = carsTest(cars || []);
   const chooseName = () => {
     if (right === true) {
       return "first";

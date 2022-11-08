@@ -1,13 +1,13 @@
 import "./Details.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
 import { fetchSingleCar } from "../store/mainpage_reducer";
-import { useEffect } from "react";
+
 
 function Details() {
   
-  
+  const dispatch = useDispatch()
   const car = useSelector((state) => state.cars.car)
 
   
@@ -40,8 +40,8 @@ function Details() {
             />
           </h4>
         </Link>
-        <Link to="/reserve_form">
-        <button className="reserve-button">Reserve</button>
+        <Link to="/reserveCar">
+        <button className="reserve-button" onClick={() => dispatch(fetchSingleCar(car.id))}>Reserve</button>
         </Link>
       </div>
     </div>

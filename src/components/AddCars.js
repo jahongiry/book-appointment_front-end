@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createNewCar } from "../store/mainpage_reducer";
 import "./AddCars.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function AddCars() {
  const dispatch = useDispatch()

@@ -3,17 +3,15 @@ import { useSelector , useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { createNewReservation } from "../store/reservationReducer"
 import { fetchAllCars } from '../store/mainpage_reducer'
-// import { reservations } from "./Reservations"
-import './Reservations.css'
-import { Link } from "react-router-dom"
+
 
 
 const ReserveForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const cars = useSelector(state => state.cars.cars)
-  const reservations = useSelector(state => state.reservations.reservations)
-  // const carId = cars.id
+
+
   const { userId } = JSON.parse(window.localStorage.getItem("user"));
   const userid = userId || 1;
   const [date, setDate] = useState('')
@@ -29,25 +27,12 @@ const ReserveForm = () => {
     navigate('/reservations')
   }
 
-  // console.log(newReservation)
 
 
 useEffect(() => {
   dispatch(fetchAllCars())
 }, [dispatch])
 
-// console.log(cars)
-  
-//     const handleSubmit = (e) =>{
-//       e.preventDefault();
-//         const newReserve = {
-//             id: reserves.length + 1,
-//             model, 
-//             city,
-//             date
-//         }              
-//        setReservations([...reserves, newReserve])  
-//     }
     return (
   
       
