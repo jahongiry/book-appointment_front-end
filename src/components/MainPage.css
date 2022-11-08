@@ -173,6 +173,7 @@
     transform: translateX(0);
   }
 }
+
 @media screen and (max-width: 750px) {
   .car-ul {
     display: flex;

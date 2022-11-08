@@ -63,8 +63,8 @@ form label {
 .cards {
   width: 85%;
   border-radius: 69px;
-  background: linear-gradient(225deg, #e6e6e6, #ffffff);
-  box-shadow: -37px 37px 73px #d9d9d9, 37px -37px 73px #ffffff;
+  background: linear-gradient(225deg, #e6e6e6, #fff);
+  box-shadow: -37px 37px 73px #d9d9d9, 37px -37px 73px #fff;
 }
 
 .name-reserve {
@@ -82,6 +82,7 @@ form label {
   .reserve-container {
     grid-template-columns: 1fr;
   }
+
   .reserve-all-container {
     margin: 3rem 3rem 3rem 3rem;
     padding-top: 2rem;
