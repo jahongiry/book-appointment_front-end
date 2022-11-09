@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { createNewCar } from '../store/mainpage_reducer';
 import './AddCars.css';
 
-function AddCars() {
+const AddCars = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userId } = JSON.parse(window.localStorage.getItem('user'));
@@ -88,6 +88,6 @@ function AddCars() {
       </form>
     </div>
   );
-}
+};
 
 export default AddCars;

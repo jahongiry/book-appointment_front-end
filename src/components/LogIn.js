@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { sendSigninDetails } from '../store/user_reducer';
 import './LogIn.css';
 /* eslint-disable  no-unused-vars */
-function LogIn() {
+const LogIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.user);
@@ -55,6 +55,6 @@ function LogIn() {
       </form>
     </div>
   );
-}
+};
 
 export default LogIn;

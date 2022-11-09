@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSingleCar } from '../store/mainpage_reducer';
 
-function Details() {
+const Details = () => {
   const dispatch = useDispatch();
   const car = useSelector((state) => state.cars.car);
 
@@ -46,6 +46,6 @@ function Details() {
       </div>
     </div>
   );
-}
+};
 
 export default Details;

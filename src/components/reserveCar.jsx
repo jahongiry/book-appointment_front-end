@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createNewReservation } from "../store/reservationReducer";
 import "./ReserveCar.css";
 
-function ReserveCar() {
+const ReserveCar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const car = useSelector((state) => state.cars.car);

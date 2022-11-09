@@ -7,7 +7,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { logout } from '../store/user_reducer';
 import logo from '../img/logo3.png';
 
-function Navbar() {
+const Navbar = () => {
   const dispatch = useDispatch();
   const [burger, setBurger] = useState(true);
 
@@ -99,6 +99,6 @@ function Navbar() {
       </div>
     </>
   );
-}
+};
 
 export default Navbar;

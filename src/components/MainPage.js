@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchAllCars, fetchSingleCar } from '../store/mainpage_reducer';
 
-function MainPage() {
+const MainPage = () => {
   const [initial, setInitial] = useState(0);
   const [right, setRight] = useState(true);
   const dispatch = useDispatch();
@@ -99,6 +99,6 @@ function MainPage() {
       </div>
     </div>
   );
-}
+};
 
 export default MainPage;
