@@ -16,10 +16,6 @@ Main features of this website are:
 - Code Editor: VS Code.
 - Technologies: Git, Gitflow, Linters, Github, PostgreSql, Rspec, Capybara, Robocop
 
-## Live Demo
-
-[Live Demo Link]()
-
 ## Kanban Board:
 Kanban Board [link](https://github.com/jahongiry/book-appointment_back-end/projects/1)
 **Initial state of the Kanban Board:**
