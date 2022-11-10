@@ -20,7 +20,7 @@ Main features of this website are:
 
 [Live Demo Link]()
 
-Kanban Board:
+## Kanban Board:
 Kanban Board [link](https://github.com/jahongiry/book-appointment_back-end/projects/1)
 **Initial state of the Kanban Board:**
 <img width="1786" alt="Screen Shot 2022-10-27 at 12 49 58 PM" src="https://user-images.githubusercontent.com/91022355/198223204-f10d5088-a286-4f6f-9d34-fd5f414c9560.png">
