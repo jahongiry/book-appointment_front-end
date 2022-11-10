@@ -1,0 +1,144 @@
+.logo {
+  display: none;
+}
+
+.active {
+  display: none;
+}
+
+.burger {
+  display: block;
+  width: 20%;
+  height: 20%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: white;
+  font-size: 26px;
+}
+
+.nav-container {
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+  opacity: 0.9;
+}
+
+.mobile {
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu-bars {
+  text-decoration: none;
+  padding: 2px 50px;
+}
+
+.reserve {
+  padding: 1rem;
+}
+
+.reserve :hover {
+  background-color: rgb(151, 191, 15);
+  color: white;
+}
+
+.navbar-toggle {
+  padding: 0;
+}
+
+.icon {
+  font-size: 10px;
+  margin: 5px;
+  margin-top: 10px;
+}
+
+@media (min-width: 750px) {
+  .nav-container {
+    background-color: white;
+    position: relative;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    float: left !important;
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+    opacity: 0.9;
+  }
+
+  .menu-bars {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: none;
+    text-decoration: none;
+    padding: 10px 80px 10px 10px;
+  }
+
+  .nav-menu {
+    background-color: #fff;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    float: left;
+    left: -100%;
+    transition: 850ms;
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+  }
+
+  .nav-menu-items {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    padding-left: 10px;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 8fr;
+  }
+
+  .navbar-toggle {
+    background-color: #fff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  span {
+    margin-left: 16px;
+  }
+
+  .reserve :hover {
+    background-color: rgb(151, 191, 15);
+    color: white;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .logo {
+    display: block;
+    width: 65%;
+    height: 65%;
+    background-color: white;
+    border-radius: 50%;
+    margin: 1rem;
+    margin-left: 1.6rem;
+  }
+
+  .burger {
+    display: none;
+  }
+}

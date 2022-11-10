@@ -1,0 +1,90 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.thead-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+.res-contain {
+  width: 100%;
+  max-width: 70%;
+  margin: 4% auto;
+  justify-content: space-between;
+}
+
+form > div {
+  width: 100%;
+  padding: 2%;
+}
+
+.model-selector {
+  width: 100%;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px 4px;
+}
+
+form label {
+  display: table-header-group;
+}
+
+.form-wrapper {
+  background-color: lightgreen;
+}
+
+.reserve-all-container {
+  margin: 0 3rem 3rem 14rem;
+  padding-top: 2rem;
+}
+
+.reserve-img {
+  padding: 5px;
+  border-radius: 20px;
+  width: 30%;
+}
+
+.reserve-container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-left: 6rem;
+}
+
+.cards {
+  width: 85%;
+  border-radius: 69px;
+  background: linear-gradient(225deg, #e6e6e6, #fff);
+  box-shadow: -37px 37px 73px #d9d9d9, 37px -37px 73px #fff;
+}
+
+.name-reserve {
+  padding: 2px;
+  font-size: 1rem;
+}
+
+@media (max-width: 1280px) {
+  .reserve-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 740px) {
+  .reserve-container {
+    grid-template-columns: 1fr;
+  }
+
+  .reserve-all-container {
+    margin: 3rem 3rem 3rem 3rem;
+    padding-top: 2rem;
+  }
+}

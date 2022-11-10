@@ -1,0 +1,49 @@
+.add-car-form {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 30%;
+}
+
+.heading-for-add {
+  font-weight: 700;
+  font-family: fantasy;
+  font-size: 4rem;
+  color: rgb(0, 117, 0);
+  padding-top: 7rem;
+}
+
+.addcar-container::after {
+  content: "";
+  opacity: 0.25;
+  background: url("../img/car-bg.jpg");
+  background-size: cover;
+  background-blend-mode: luminosity;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.input-email[type="number"] {
+  width: 100%;
+  background-color: #97bf0f;
+  color: white;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid rgb(128, 167, 22);
+}
+
+.add-button {
+  color: white;
+  border-radius: 15px;
+  background-color: #97bf0f;
+  border: 1px solid rgb(128, 167, 22);
+  margin: auto;
+  width: 50%;
+}

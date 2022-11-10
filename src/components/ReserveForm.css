@@ -1,0 +1,30 @@
+.reserve-car-d {
+  margin: auto;
+  width: 80%;
+  border-radius: 41px;
+  background: linear-gradient(315deg, #e6e6e6, #fff);
+  box-shadow: -5px -5px 10px #d9d9d9, 5px 5px 10px #fff;
+}
+
+.input-r {
+  color: rgb(22, 22, 22);
+  background: #f8f9fa;
+  padding: 10px;
+  padding-left: 20px;
+  border-radius: 50px;
+  border: 1px solid rgb(88, 88, 88);
+}
+
+.main h1 {
+  margin-bottom: 3rem;
+}
+
+.button-r {
+  margin-bottom: 1.5rem;
+  transition: all 1s;
+}
+
+.button-r:hover {
+  background-color: white;
+  color: rgb(22, 22, 22);
+}
